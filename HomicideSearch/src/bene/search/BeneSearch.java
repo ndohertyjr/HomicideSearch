@@ -7,13 +7,15 @@ import java.awt.*;
 public class BeneSearch {
 
 	public static void main(String[] args) {
-		//Create standard variables for bene name, victim name, and user input
+		//Create standard variables for bene name, victim name, date, and user input
 		Scanner userInput = new Scanner(System.in);
 		String beneName = "";
 		String victimName = "";
+		String dateOfEvent = "";
+		String location = "";
 		int choice = 0;
 		//Create list to store search sentences
-		
+		ArrayList<String> newSearch = new ArrayList<String>();
 		
 		//Main options menu
 		System.out.println("Welcome to the Homicide Search Tool.");
@@ -28,11 +30,21 @@ public class BeneSearch {
 		
 		switch (choice) {
 			case 1:
-				UserInput userChoice = new UserInput();								//Create instance userBeneChoice to access UserInput methods
-				beneName = userChoice.getBeneName(beneName);						//Run get bene name method and assign to bene name
-				victimName = userChoice.getVictimName(victimName);					//Run get bene name method and assign to bene name
+				UserInput userChoice = new UserInput();														//Create instance userBeneChoice to access UserInput methods
+				beneName = userChoice.getBeneName(beneName);												//Run get bene name method and store
+				victimName = userChoice.getVictimName(victimName);											//Run get victim name method and store
+				dateOfEvent = userChoice.getDate(dateOfEvent);												//Run date method and store
+				location = userChoice.getCity(location);													//Run get city method and store
 				
 				System.out.println("Searching online for an incident where " + beneName + " murdered " + victimName + ".");
+				
+				SearchTerms namesToSearch = new SearchTerms();												//Create instance of Search terms to access search methods
+				namesToSearch.populateSearchVariables(beneName, victimName, dateOfEvent, location); 		//Populate search terms with data provided
+				newSearch = namesToSearch.getSearchList();
+				
+				for (int i = 0; i < newSearch.size(); i++) {
+					System.out.println(i);
+				}
 				
 				
 			

@@ -17,5 +17,17 @@ public class UserInput {
 		victimName = userIn.nextLine();
 		return victimName;
 	}
+	//Obtain date of the crime
+	public String getDate(String date) {
+		System.out.println("When was the date of the crime: ");
+		date = userIn.nextLine();
+		return date;
+	}
+	//Obtain location of the crime
+	public String getCity(String city) {
+		System.out.println("Where did the homicide take place: ");
+		city = userIn.nextLine();
+		return city;
+	}
 	
 }
