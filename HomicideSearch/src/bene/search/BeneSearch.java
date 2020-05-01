@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class BeneSearch {
 
-	public static void main(String[] args) {
+	public static void beneSearch() {
 		//Create standard variables for bene name, victim name, date, and user input
 		Scanner userInput = new Scanner(System.in);
 		String beneName = "";
