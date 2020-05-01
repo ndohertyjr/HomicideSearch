@@ -20,9 +20,9 @@ import javax.swing.border.EmptyBorder;
 public class MainDesign implements ActionListener {
 	
 	//Create main buttons
-	JButton beginSearch;
-	JButton printResults;
-	JButton clearData;
+	JButton homicideSearch;
+	JButton accidentSearch;
+	JButton obituarySearch;
 	JButton quit;
 	
 	//Create main frame
@@ -41,11 +41,13 @@ public class MainDesign implements ActionListener {
 	Dimension buttonSize = new Dimension(125, 50);
 	
 	public MainDesign() {
-		
+		/*FIXME
+		 * Update search buttons and layout to reflect different search types
+		 */
 		//Label buttons
-		beginSearch = new JButton("Begin Search");
-		printResults = new JButton("Print Results");
-		clearData = new JButton("Clear Data");
+		homicideSearch = new JButton("Homicide Search");
+		accidentSearch = new JButton("Accident Search");
+		obituarySearch = new JButton("Obituary Search");
 		quit = new JButton("Quit");
 		
 		//Create opening Frame
@@ -57,9 +59,9 @@ public class MainDesign implements ActionListener {
 		quitArea = new JTextArea(5, 40);
 		
 		//button action listeners
-		beginSearch.addActionListener(this);
-		printResults.addActionListener(this);
-		clearData.addActionListener(this);
+		homicideSearch.addActionListener(this);
+		accidentSearch.addActionListener(this);
+		obituarySearch.addActionListener(this);
 		quit.addActionListener(this);
 		
 		//Opening Frame design
@@ -69,12 +71,12 @@ public class MainDesign implements ActionListener {
 		openingFrame.pack();
 		
 		//button design
-		openingFrame.add(beginSearch, BorderLayout.EAST);
-		beginSearch.setPreferredSize(buttonSize);
-		openingFrame.add(printResults, BorderLayout.CENTER);
-		printResults.setPreferredSize(buttonSize);
-		openingFrame.add(clearData, BorderLayout.WEST);
-		clearData.setPreferredSize(buttonSize);
+		openingFrame.add(homicideSearch, BorderLayout.EAST);
+		homicideSearch.setPreferredSize(buttonSize);
+		openingFrame.add(accidentSearch, BorderLayout.CENTER);
+		accidentSearch.setPreferredSize(buttonSize);
+		openingFrame.add(obituarySearch, BorderLayout.WEST);
+		obituarySearch.setPreferredSize(buttonSize);
 		openingFrame.add(quit, BorderLayout.SOUTH);
 		quit.setPreferredSize(buttonSize);
 		
@@ -87,7 +89,7 @@ public class MainDesign implements ActionListener {
 	public void actionPerformed(ActionEvent e){
 		
 		//Begin search button is pushed
-		if (e.getSource() == beginSearch) {
+		if (e.getSource() == homicideSearch) {
 			
 			searchFrame = new JFrame("Search Tool");
 	        searchFrame.setLayout(new BorderLayout());
@@ -110,9 +112,9 @@ public class MainDesign implements ActionListener {
 	        JTextField cityField = new JTextField(36);
 	        
 	        //Search, print, clear, quit buttons
-			beginSearch = new JButton("Begin Search");
-			printResults = new JButton("Print Results");
-			clearData = new JButton("Clear Data");
+			JButton beginSearch = new JButton("Begin Search");
+			JButton printResults = new JButton("Print Results");
+			JButton clearData = new JButton("Clear Data");
 			quit = new JButton("Quit");
 	        
 	        //Panel for search data
@@ -127,28 +129,33 @@ public class MainDesign implements ActionListener {
 	        searchPanel.add(dateField);
 	        searchPanel.add(city);
 	        searchPanel.add(cityField);
-	        searchPanel.add(beginSearch);
-	        searchPanel.add(printResults);
-	        searchPanel.add(clearData);
+	        searchPanel.add(homicideSearch);
+	        searchPanel.add(accidentSearch);
+	        searchPanel.add(obituarySearch);
 	        searchPanel.add(quit);
 	        
 	        searchFrame.add(searchPanel);
 	        
+	        beginSearch.addActionListener(this);
+	        
 	        
 		
 		}
-		//FIXME implement print results button
-		if (e.getSource() == printResults) {
+		//FIXME implement accident search button
+		if (e.getSource() == accidentSearch) {
 			
 		}
-		//FIXME implement clear data button
-		if (e.getSource() == clearData) {
+		//FIXME implement obituary search button
+		if (e.getSource() == obituarySearch) {
 			
 		}
 		//FIXME implement quit button
 		if (e.getSource() == quit) {
 			
 		}
+		//FIXME add functionality for each button in the individual search types
+		
+			
 		
 	}
 	
