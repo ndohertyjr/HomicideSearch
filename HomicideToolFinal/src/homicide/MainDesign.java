@@ -83,12 +83,13 @@ public class MainDesign implements ActionListener {
 		
 	  
 		
-        
+        //Add labels and text fields
 		for (int i = 0; i < labels.length; i++) {
 			searchPanel.add(labels[i], BorderLayout.SOUTH);
 			searchPanel.add(fields[i], BorderLayout.SOUTH);
 		}
 		
+		//Add buttons
 		for (int i = 0; i < buttons.length; i++) {
 			buttons[i].addActionListener(this);
 			buttons[i].setFont(new Font("Arial", Font.BOLD, 12));
@@ -118,7 +119,6 @@ public class MainDesign implements ActionListener {
 				
 		}
 		
-		
 		//Print Results
 		if (userChoice.getSource() == buttons[1]) {
 			
@@ -129,12 +129,14 @@ public class MainDesign implements ActionListener {
 
 			search.outputSearchDataToFile(searchResults);
 		}
+		
 		//Clear Data
 		if (userChoice.getSource() == buttons[2]) {
  			for (int i = 0; i < fields.length; i++) {
     		fields[i].setText("");
  			}
 		}
+		
 		//Quit program
 		if (userChoice.getSource() == buttons[3]) {
 			System.exit(0);

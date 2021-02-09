@@ -1,5 +1,5 @@
 /**
- * Search functionality for Chrome and the method to write to a .txt file.
+ * Search functionality for Chrome and the method to write to a .txt file.  Inherits from MainDesign.
  * 
  * @since V1.0
  * @author Neil Doherty
@@ -32,16 +32,6 @@ public class HomicideSearch extends MainDesign {
 	public void openFile(File fileLocation) throws IOException {
 		
 		desktop.open(fileLocation);
-		
-	}
-	//Check if file is open
-	public boolean isFileOpen(File file) {
-		if(file.canWrite()) {
-			return true;
-		}
-		else {
-			return false;
-		}
 		
 	}
 	
